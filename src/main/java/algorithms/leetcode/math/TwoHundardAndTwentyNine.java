@@ -9,9 +9,11 @@ public class TwoHundardAndTwentyNine {
 
 //        int[] arr = new int[]{2};
 //        int[] arr = new int[]{1,1,1,3,3,2,2,2};
-        int[] arr = new int[]{3,2,3};
+//        int[] arr = new int[]{3,2,3};
+        int[] arr = new int[]{-1,-1,-1};
+//        int[] arr = new int[]{4,1,2,3,4,4,3,2,1,4};
 //        int[] arr = new int[]{2,3};
-        List<Integer> res =  twoHundardAndTwentyNine.majorityElement(arr);
+        List<Integer> res =  twoHundardAndTwentyNine.majorityElement2(arr);
         System.out.println(res);
     }
 
@@ -42,5 +44,58 @@ public class TwoHundardAndTwentyNine {
         return result;
     }
 
+    public List<Integer> majorityElement2(int[] nums) {
+
+        int vote1 = 0;
+        int val1 = -1;
+        int vote2 = 0;
+        int val2 = -1;
+
+        for(int num: nums) {
+            if(vote1>0 && val1 == num) {
+                vote1++;
+            }else if(vote2>0 && val2 ==num) {
+                vote2 ++;
+            }else if(vote1 == 0 ) {
+                vote1++;
+                val1 = num;
+            }else if (vote2 == 0) {
+                vote2++;
+                val2 = num;
+            }else {
+                vote1 --;
+                vote2 --;
+            }
+            if (vote1 == 0 ) {
+                val1 = -1;
+            }
+            if (vote2 == 0 ) {
+                val2 = -1;
+            }
+
+
+        }
+
+        List<Integer> result = new ArrayList<>();
+        int count1 = 0;
+        int coutn2= 0;
+        for(int ele: nums) {
+            if(ele ==val1) {
+                count1 ++;
+            }
+            if (ele == val2) {
+                coutn2 ++;
+            }
+        }
+
+        if(count1 > nums.length/3) {
+            result.add(val1);
+        }
+        if (coutn2 > nums.length/3) {
+            result.add(val2);
+        }
+
+        return result;
+    }
 
 }
