@@ -66,24 +66,16 @@ public class TwoHundardAndTwentyNine {
                 vote1 --;
                 vote2 --;
             }
-            if (vote1 == 0 ) {
-                val1 = -1;
-            }
-            if (vote2 == 0 ) {
-                val2 = -1;
-            }
-
-
         }
 
         List<Integer> result = new ArrayList<>();
         int count1 = 0;
         int coutn2= 0;
         for(int ele: nums) {
-            if(ele ==val1) {
+            if(vote1>0  && val1 == ele) {
                 count1 ++;
             }
-            if (ele == val2) {
+            if (vote2>0 && val2 == ele) {
                 coutn2 ++;
             }
         }
