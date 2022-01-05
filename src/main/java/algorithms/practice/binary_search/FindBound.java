@@ -1,4 +1,4 @@
-package algorithms.parctice.binary_search;
+package algorithms.practice.binary_search;
 
 /**
  * 找到目标元素的左边界
