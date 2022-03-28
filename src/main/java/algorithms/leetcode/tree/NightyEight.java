@@ -1,5 +1,7 @@
 package algorithms.leetcode.tree;
 
+import algorithms.leetcode.common.TreeNode;
+
 public class NightyEight {
 
     long min = Long.MIN_VALUE ;
@@ -27,15 +29,6 @@ public class NightyEight {
 
 
         return calc(node.right);
-    }
-
-    public class TreeNode {
-          int val;
-          TreeNode left;
-          TreeNode right;
-          TreeNode(int x) {
-              val = x;
-          }
     }
 
 }
