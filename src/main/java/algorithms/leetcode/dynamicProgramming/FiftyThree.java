@@ -31,4 +31,25 @@ public class FiftyThree {
         return max;
 
     }
+
+    public int maxSubArray2(int[] nums) {
+        int len = nums.length;
+
+        if(len ==0 ) {
+            return -1;
+        }
+        if(len == 1) {
+            return nums[0];
+        }
+
+        int pre = 0;
+        int max = Integer.MIN_VALUE;
+        for(int i=0; i<len ;i++) {
+            int tmp = Math.max(pre + nums[i], nums[i]);
+            pre = tmp;
+            max = Math.max(max, tmp);
+        }
+
+        return max;
+    }
 }
