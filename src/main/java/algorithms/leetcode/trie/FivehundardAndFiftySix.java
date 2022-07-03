@@ -1,4 +1,4 @@
-package algorithms.leetcode.two_pointer;
+package algorithms.leetcode.trie;
 
 public class FivehundardAndFiftySix {
     public static void main(String[] args) {
