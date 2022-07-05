@@ -3,19 +3,22 @@ package algorithms.leetcode.linkList;
 import java.util.HashMap;
 
 public class OnehundardAndThirtyEight {
-    HashMap<Node, Node> hMap = new HashMap<>();
+
+    HashMap<Node, Node> nodeMap = new HashMap<>();
     public Node copyRandomList(Node head) {
         if(head == null) {
-            return null;
-        }
-        if(!hMap.containsKey(head)) {
-            Node newHead = new Node(head.val);
-            hMap.put(head, newHead);
-            newHead.next = copyRandomList(head.next);
-            newHead.random = copyRandomList(head.random);
+            return head;
         }
 
-        return hMap.get(head);
+        Node newNode = nodeMap.getOrDefault(head, null);
+        if(newNode == null) {
+            newNode = new Node(head.val);
+            nodeMap.put(head, newNode);
+            newNode.next = copyRandomList(head.next);
+            newNode.random = copyRandomList(head.random);
+        }
+
+        return newNode;
     }
 
     class Node {
@@ -31,6 +34,4 @@ public class OnehundardAndThirtyEight {
     }
 
 }
-
-// Definition for a Node.
 
