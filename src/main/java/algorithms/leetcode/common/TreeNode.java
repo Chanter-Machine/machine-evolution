@@ -14,6 +14,19 @@ public class TreeNode {
          this.right = right;
     }
 
+    public TreeNode getLeftChild(){
+        return this.left;
+    }
+
+    public TreeNode getRightChild(){
+        return this.right;
+    }
+
+    /**
+     * 生成一棵树
+     * @param array
+     * @return
+     */
     public static TreeNode constructTree(Integer[] array) {
         if (array == null || array.length == 0 || array[0] == null) {
             return null;
@@ -50,5 +63,6 @@ public class TreeNode {
 
         return root;
     }
+
 
 }
