@@ -1,7 +1,5 @@
 package algorithms.leetcode.array;
 
-
-
 public class ThirtySix {
     public static void main(String[] args) {
         char[][] board = new char[][]
