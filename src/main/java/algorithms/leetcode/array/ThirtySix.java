@@ -1,8 +1,6 @@
 package algorithms.leetcode.array;
 
-import algorithms.leetcode.two_pointer.ThirtyFirst;
 
-import java.util.Arrays;
 
 public class ThirtySix {
     public static void main(String[] args) {
